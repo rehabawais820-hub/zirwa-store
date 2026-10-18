@@ -1,0 +1,1444 @@
+[
+  {
+    "legacy_id": "z001",
+    "slug": "rosewood-embroidered-dress",
+    "name": "Rosewood Embroidered Dress",
+    "description": "A flowing silhouette with a finished neckline and hem. Easy to dress up for an event or wear through the day.",
+    "category_slug": "dresses",
+    "price_pkr": 5400,
+    "sale_price_pkr": 4299,
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sky",
+      "mocha",
+      "wine"
+    ],
+    "stock": 25,
+    "images": [],
+    "is_active": true,
+    "is_demo": true,
+    "is_new": true,
+    "is_bestseller": false
+  },
+  {
+    "legacy_id": "z002",
+    "slug": "mehr-lawn-frock",
+    "name": "Mehr Lawn Frock",
+    "description": "A flowing silhouette with a finished neckline and hem. Easy to dress up for an event or wear through the day.",
+    "category_slug": "dresses",
+    "price_pkr": 4400,
+    "sale_price_pkr": 3499,
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "mocha",
+      "wine",
+      "emerald"
+    ],
+    "stock": 25,
+    "images": [],
+    "is_active": true,
+    "is_demo": true,
+    "is_new": false,
+    "is_bestseller": true
+  },
+  {
+    "legacy_id": "z003",
+    "slug": "noor-chiffon-maxi",
+    "name": "Noor Chiffon Maxi",
+    "description": "A flowing silhouette with a finished neckline and hem. Easy to dress up for an event or wear through the day.",
+    "category_slug": "dresses",
+    "price_pkr": 3700,
+    "sale_price_pkr": 2999,
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "blush",
+      "ivory",
+      "sky"
+    ],
+    "stock": 25,
+    "images": [],
+    "is_active": true,
+    "is_demo": true,
+    "is_new": false,
+    "is_bestseller": false
+  },
+  {
+    "legacy_id": "z004",
+    "slug": "gulab-printed-anarkali",
+    "name": "Gulab Printed Anarkali",
+    "description": "A flowing silhouette with a finished neckline and hem. Easy to dress up for an event or wear through the day.",
+    "category_slug": "dresses",
+    "price_pkr": 5400,
+    "sale_price_pkr": 4299,
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sage",
+      "sky",
+      "sand"
+    ],
+    "stock": 25,
+    "images": [],
+    "is_active": true,
+    "is_demo": true,
+    "is_new": true,
+    "is_bestseller": false
+  },
+  {
+    "legacy_id": "z005",
+    "slug": "sahar-pleated-midi",
+    "name": "Sahar Pleated Midi",
+    "description": "A flowing silhouette with a finished neckline and hem. Easy to dress up for an event or wear through the day.",
+    "category_slug": "dresses",
+    "price_pkr": 5499,
+    "sale_price_pkr": null,
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "mocha",
+      "sage",
+      "emerald"
+    ],
+    "stock": 25,
+    "images": [],
+    "is_active": true,
+    "is_demo": true,
+    "is_new": false,
+    "is_bestseller": false
+  },
+  {
+    "legacy_id": "z006",
+    "slug": "aliza-button-down-dress",
+    "name": "Aliza Button-Down Dress",
+    "description": "A flowing silhouette with a finished neckline and hem. Easy to dress up for an event or wear through the day.",
+    "category_slug": "dresses",
+    "price_pkr": 5000,
+    "sale_price_pkr": 3999,
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "wine",
+      "mocha",
+      "sage"
+    ],
+    "stock": 25,
+    "images": [],
+    "is_active": true,
+    "is_demo": true,
+    "is_new": false,
+    "is_bestseller": false
+  },
+  {
+    "legacy_id": "z007",
+    "slug": "zoya-organza-gown",
+    "name": "Zoya Organza Gown",
+    "description": "A flowing silhouette with a finished neckline and hem. Easy to dress up for an event or wear through the day.",
+    "category_slug": "dresses",
+    "price_pkr": 6900,
+    "sale_price_pkr": 5499,
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "ivory",
+      "emerald",
+      "mocha"
+    ],
+    "stock": 25,
+    "images": [],
+    "is_active": true,
+    "is_demo": true,
+    "is_new": true,
+    "is_bestseller": false
+  },
+  {
+    "legacy_id": "z008",
+    "slug": "fiza-a-line-dress",
+    "name": "Fiza A-Line Dress",
+    "description": "A flowing silhouette with a finished neckline and hem. Easy to dress up for an event or wear through the day.",
+    "category_slug": "dresses",
+    "price_pkr": 4999,
+    "sale_price_pkr": null,
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "blush",
+      "sky",
+      "emerald"
+    ],
+    "stock": 25,
+    "images": [],
+    "is_active": true,
+    "is_demo": true,
+    "is_new": false,
+    "is_bestseller": false
+  },
+  {
+    "legacy_id": "z009",
+    "slug": "hoor-block-print-dress",
+    "name": "Hoor Block-Print Dress",
+    "description": "A flowing silhouette with a finished neckline and hem. Easy to dress up for an event or wear through the day.",
+    "category_slug": "dresses",
+    "price_pkr": 5000,
+    "sale_price_pkr": 3999,
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sand",
+      "ivory",
+      "charcoal"
+    ],
+    "stock": 25,
+    "images": [],
+    "is_active": true,
+    "is_demo": true,
+    "is_new": false,
+    "is_bestseller": false
+  },
+  {
+    "legacy_id": "z010",
+    "slug": "maham-ruffle-maxi",
+    "name": "Maham Ruffle Maxi",
+    "description": "A flowing silhouette with a finished neckline and hem. Easy to dress up for an event or wear through the day.",
+    "category_slug": "dresses",
+    "price_pkr": 6200,
+    "sale_price_pkr": 4999,
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sand",
+      "rose",
+      "emerald"
+    ],
+    "stock": 25,
+    "images": [],
+    "is_active": true,
+    "is_demo": true,
+    "is_new": true,
+    "is_bestseller": false
+  },
+  {
+    "legacy_id": "z011",
+    "slug": "aroha-linen-co-ord",
+    "name": "Aroha Linen Co-ord",
+    "description": "A matching two-piece set cut to be worn together or split into separate looks.",
+    "category_slug": "coords",
+    "price_pkr": 4999,
+    "sale_price_pkr": null,
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sky",
+      "rose",
+      "sand"
+    ],
+    "stock": 25,
+    "images": [],
+    "is_active": true,
+    "is_demo": true,
+    "is_new": true,
+    "is_bestseller": false
+  },
+  {
+    "legacy_id": "z012",
+    "slug": "rimsha-printed-co-ord-set",
+    "name": "Rimsha Printed Co-ord Set",
+    "description": "A matching two-piece set cut to be worn together or split into separate looks.",
+    "category_slug": "coords",
+    "price_pkr": 4999,
+    "sale_price_pkr": null,
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "wine",
+      "charcoal",
+      "sage"
+    ],
+    "stock": 25,
+    "images": [],
+    "is_active": true,
+    "is_demo": true,
+    "is_new": false,
+    "is_bestseller": true
+  },
+  {
+    "legacy_id": "z013",
+    "slug": "sanam-embroidered-co-ord",
+    "name": "Sanam Embroidered Co-ord",
+    "description": "A matching two-piece set cut to be worn together or split into separate looks.",
+    "category_slug": "coords",
+    "price_pkr": 5999,
+    "sale_price_pkr": null,
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "wine",
+      "charcoal",
+      "ivory"
+    ],
+    "stock": 25,
+    "images": [],
+    "is_active": true,
+    "is_demo": true,
+    "is_new": false,
+    "is_bestseller": false
+  },
+  {
+    "legacy_id": "z014",
+    "slug": "zarmeen-two-piece-set",
+    "name": "Zarmeen Two-Piece Set",
+    "description": "A matching two-piece set cut to be worn together or split into separate looks.",
+    "category_slug": "coords",
+    "price_pkr": 5999,
+    "sale_price_pkr": null,
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "blush",
+      "mocha",
+      "rose"
+    ],
+    "stock": 25,
+    "images": [],
+    "is_active": true,
+    "is_demo": true,
+    "is_new": true,
+    "is_bestseller": false
+  },
+  {
+    "legacy_id": "z015",
+    "slug": "inaya-straight-cut-co-ord",
+    "name": "Inaya Straight-Cut Co-ord",
+    "description": "A matching two-piece set cut to be worn together or split into separate looks.",
+    "category_slug": "coords",
+    "price_pkr": 6200,
+    "sale_price_pkr": 4999,
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "rose",
+      "mocha",
+      "charcoal"
+    ],
+    "stock": 25,
+    "images": [],
+    "is_active": true,
+    "is_demo": true,
+    "is_new": false,
+    "is_bestseller": false
+  },
+  {
+    "legacy_id": "z016",
+    "slug": "laiba-coord-with-dupatta",
+    "name": "Laiba Coord with Dupatta",
+    "description": "A matching two-piece set cut to be worn together or split into separate looks.",
+    "category_slug": "coords",
+    "price_pkr": 5999,
+    "sale_price_pkr": null,
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sand",
+      "emerald",
+      "blush"
+    ],
+    "stock": 25,
+    "images": [],
+    "is_active": true,
+    "is_demo": true,
+    "is_new": false,
+    "is_bestseller": false
+  },
+  {
+    "legacy_id": "z017",
+    "slug": "nimra-wide-leg-set",
+    "name": "Nimra Wide-Leg Set",
+    "description": "A matching two-piece set cut to be worn together or split into separate looks.",
+    "category_slug": "coords",
+    "price_pkr": 6200,
+    "sale_price_pkr": 4999,
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "emerald",
+      "mocha",
+      "charcoal"
+    ],
+    "stock": 25,
+    "images": [],
+    "is_active": true,
+    "is_demo": true,
+    "is_new": true,
+    "is_bestseller": false
+  },
+  {
+    "legacy_id": "z018",
+    "slug": "kainat-textured-co-ord",
+    "name": "Kainat Textured Co-ord",
+    "description": "A matching two-piece set cut to be worn together or split into separate looks.",
+    "category_slug": "coords",
+    "price_pkr": 6900,
+    "sale_price_pkr": 5499,
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sand",
+      "wine",
+      "emerald"
+    ],
+    "stock": 25,
+    "images": [],
+    "is_active": true,
+    "is_demo": true,
+    "is_new": false,
+    "is_bestseller": false
+  },
+  {
+    "legacy_id": "z019",
+    "slug": "amal-festive-co-ord",
+    "name": "Amal Festive Co-ord",
+    "description": "A matching two-piece set cut to be worn together or split into separate looks.",
+    "category_slug": "coords",
+    "price_pkr": 5600,
+    "sale_price_pkr": 4499,
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sand",
+      "emerald",
+      "sage"
+    ],
+    "stock": 25,
+    "images": [],
+    "is_active": true,
+    "is_demo": true,
+    "is_new": false,
+    "is_bestseller": false
+  },
+  {
+    "legacy_id": "z020",
+    "slug": "iman-everyday-co-ord",
+    "name": "Iman Everyday Co-ord",
+    "description": "A matching two-piece set cut to be worn together or split into separate looks.",
+    "category_slug": "coords",
+    "price_pkr": 6200,
+    "sale_price_pkr": 4999,
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "mocha",
+      "emerald",
+      "sand"
+    ],
+    "stock": 25,
+    "images": [],
+    "is_active": true,
+    "is_demo": true,
+    "is_new": true,
+    "is_bestseller": false
+  },
+  {
+    "legacy_id": "z021",
+    "slug": "misha-boxy-top",
+    "name": "Misha Boxy Top",
+    "description": "A relaxed everyday top that pairs with trousers, skirts and shalwars.",
+    "category_slug": "tops",
+    "price_pkr": 4100,
+    "sale_price_pkr": 3299,
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "blush",
+      "charcoal",
+      "sand"
+    ],
+    "stock": 25,
+    "images": [],
+    "is_active": true,
+    "is_demo": true,
+    "is_new": true,
+    "is_bestseller": false
+  },
+  {
+    "legacy_id": "z022",
+    "slug": "dua-frill-sleeve-top",
+    "name": "Dua Frill-Sleeve Top",
+    "description": "A relaxed everyday top that pairs with trousers, skirts and shalwars.",
+    "category_slug": "tops",
+    "price_pkr": 2199,
+    "sale_price_pkr": null,
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sage",
+      "wine",
+      "emerald"
+    ],
+    "stock": 25,
+    "images": [],
+    "is_active": true,
+    "is_demo": true,
+    "is_new": false,
+    "is_bestseller": true
+  },
+  {
+    "legacy_id": "z023",
+    "slug": "ayat-embroidered-kurti",
+    "name": "Ayat Embroidered Kurti",
+    "description": "A relaxed everyday top that pairs with trousers, skirts and shalwars.",
+    "category_slug": "tops",
+    "price_pkr": 1799,
+    "sale_price_pkr": null,
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sand",
+      "blush",
+      "charcoal"
+    ],
+    "stock": 25,
+    "images": [],
+    "is_active": true,
+    "is_demo": true,
+    "is_new": false,
+    "is_bestseller": false
+  },
+  {
+    "legacy_id": "z024",
+    "slug": "rida-lace-trim-top",
+    "name": "Rida Lace-Trim Top",
+    "description": "A relaxed everyday top that pairs with trousers, skirts and shalwars.",
+    "category_slug": "tops",
+    "price_pkr": 2700,
+    "sale_price_pkr": 2199,
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "ivory",
+      "rose",
+      "mocha"
+    ],
+    "stock": 25,
+    "images": [],
+    "is_active": true,
+    "is_demo": true,
+    "is_new": true,
+    "is_bestseller": false
+  },
+  {
+    "legacy_id": "z025",
+    "slug": "anum-peplum-top",
+    "name": "Anum Peplum Top",
+    "description": "A relaxed everyday top that pairs with trousers, skirts and shalwars.",
+    "category_slug": "tops",
+    "price_pkr": 2499,
+    "sale_price_pkr": null,
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sand",
+      "sage",
+      "blush"
+    ],
+    "stock": 25,
+    "images": [],
+    "is_active": true,
+    "is_demo": true,
+    "is_new": false,
+    "is_bestseller": false
+  },
+  {
+    "legacy_id": "z026",
+    "slug": "sana-short-kurti",
+    "name": "Sana Short Kurti",
+    "description": "A relaxed everyday top that pairs with trousers, skirts and shalwars.",
+    "category_slug": "tops",
+    "price_pkr": 2999,
+    "sale_price_pkr": null,
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sand",
+      "wine",
+      "charcoal"
+    ],
+    "stock": 25,
+    "images": [],
+    "is_active": true,
+    "is_demo": true,
+    "is_new": false,
+    "is_bestseller": false
+  },
+  {
+    "legacy_id": "z027",
+    "slug": "hira-bell-sleeve-top",
+    "name": "Hira Bell-Sleeve Top",
+    "description": "A relaxed everyday top that pairs with trousers, skirts and shalwars.",
+    "category_slug": "tops",
+    "price_pkr": 2200,
+    "sale_price_pkr": 1799,
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "mocha",
+      "charcoal",
+      "rose"
+    ],
+    "stock": 25,
+    "images": [],
+    "is_active": true,
+    "is_demo": true,
+    "is_new": true,
+    "is_bestseller": false
+  },
+  {
+    "legacy_id": "z028",
+    "slug": "bisma-printed-tunic",
+    "name": "Bisma Printed Tunic",
+    "description": "A relaxed everyday top that pairs with trousers, skirts and shalwars.",
+    "category_slug": "tops",
+    "price_pkr": 4100,
+    "sale_price_pkr": 3299,
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sand",
+      "rose",
+      "wine"
+    ],
+    "stock": 25,
+    "images": [],
+    "is_active": true,
+    "is_demo": true,
+    "is_new": false,
+    "is_bestseller": false
+  },
+  {
+    "legacy_id": "z029",
+    "slug": "esha-kurti-with-slits",
+    "name": "Esha Kurti with Slits",
+    "description": "A relaxed everyday top that pairs with trousers, skirts and shalwars.",
+    "category_slug": "tops",
+    "price_pkr": 4100,
+    "sale_price_pkr": 3299,
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "rose",
+      "mocha",
+      "sky"
+    ],
+    "stock": 25,
+    "images": [],
+    "is_active": true,
+    "is_demo": true,
+    "is_new": false,
+    "is_bestseller": false
+  },
+  {
+    "legacy_id": "z030",
+    "slug": "fari-cotton-shirt",
+    "name": "Fari Cotton Shirt",
+    "description": "A relaxed everyday top that pairs with trousers, skirts and shalwars.",
+    "category_slug": "tops",
+    "price_pkr": 2799,
+    "sale_price_pkr": null,
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "mocha",
+      "blush",
+      "ivory"
+    ],
+    "stock": 25,
+    "images": [],
+    "is_active": true,
+    "is_demo": true,
+    "is_new": true,
+    "is_bestseller": false
+  },
+  {
+    "legacy_id": "z031",
+    "slug": "palazzo-pants-in-soft-cotton",
+    "name": "Palazzo Pants in Soft Cotton",
+    "description": "Comfortable bottoms with a clean waistband, made to match your favourite tops and kurtas.",
+    "category_slug": "bottoms",
+    "price_pkr": 2299,
+    "sale_price_pkr": null,
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sage",
+      "charcoal",
+      "ivory"
+    ],
+    "stock": 25,
+    "images": [],
+    "is_active": true,
+    "is_demo": true,
+    "is_new": true,
+    "is_bestseller": false
+  },
+  {
+    "legacy_id": "z032",
+    "slug": "cigarette-trousers",
+    "name": "Cigarette Trousers",
+    "description": "Comfortable bottoms with a clean waistband, made to match your favourite tops and kurtas.",
+    "category_slug": "bottoms",
+    "price_pkr": 2900,
+    "sale_price_pkr": 2299,
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "charcoal",
+      "sage",
+      "wine"
+    ],
+    "stock": 25,
+    "images": [],
+    "is_active": true,
+    "is_demo": true,
+    "is_new": false,
+    "is_bestseller": true
+  },
+  {
+    "legacy_id": "z033",
+    "slug": "wide-leg-culottes",
+    "name": "Wide-Leg Culottes",
+    "description": "Comfortable bottoms with a clean waistband, made to match your favourite tops and kurtas.",
+    "category_slug": "bottoms",
+    "price_pkr": 1900,
+    "sale_price_pkr": 1499,
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sage",
+      "sky",
+      "charcoal"
+    ],
+    "stock": 25,
+    "images": [],
+    "is_active": true,
+    "is_demo": true,
+    "is_new": false,
+    "is_bestseller": false
+  },
+  {
+    "legacy_id": "z034",
+    "slug": "straight-shalwar",
+    "name": "Straight Shalwar",
+    "description": "Comfortable bottoms with a clean waistband, made to match your favourite tops and kurtas.",
+    "category_slug": "bottoms",
+    "price_pkr": 2500,
+    "sale_price_pkr": 1999,
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sage",
+      "blush",
+      "charcoal"
+    ],
+    "stock": 25,
+    "images": [],
+    "is_active": true,
+    "is_demo": true,
+    "is_new": true,
+    "is_bestseller": false
+  },
+  {
+    "legacy_id": "z035",
+    "slug": "tulip-pants",
+    "name": "Tulip Pants",
+    "description": "Comfortable bottoms with a clean waistband, made to match your favourite tops and kurtas.",
+    "category_slug": "bottoms",
+    "price_pkr": 2299,
+    "sale_price_pkr": null,
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "mocha",
+      "sage",
+      "wine"
+    ],
+    "stock": 25,
+    "images": [],
+    "is_active": true,
+    "is_demo": true,
+    "is_new": false,
+    "is_bestseller": false
+  },
+  {
+    "legacy_id": "z036",
+    "slug": "flared-trousers",
+    "name": "Flared Trousers",
+    "description": "Comfortable bottoms with a clean waistband, made to match your favourite tops and kurtas.",
+    "category_slug": "bottoms",
+    "price_pkr": 2499,
+    "sale_price_pkr": null,
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "rose",
+      "mocha",
+      "emerald"
+    ],
+    "stock": 25,
+    "images": [],
+    "is_active": true,
+    "is_demo": true,
+    "is_new": false,
+    "is_bestseller": false
+  },
+  {
+    "legacy_id": "z037",
+    "slug": "cotton-capri-pants",
+    "name": "Cotton Capri Pants",
+    "description": "Comfortable bottoms with a clean waistband, made to match your favourite tops and kurtas.",
+    "category_slug": "bottoms",
+    "price_pkr": 1799,
+    "sale_price_pkr": null,
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "wine",
+      "rose",
+      "sage"
+    ],
+    "stock": 25,
+    "images": [],
+    "is_active": true,
+    "is_demo": true,
+    "is_new": true,
+    "is_bestseller": false
+  },
+  {
+    "legacy_id": "z038",
+    "slug": "pleated-palazzo",
+    "name": "Pleated Palazzo",
+    "description": "Comfortable bottoms with a clean waistband, made to match your favourite tops and kurtas.",
+    "category_slug": "bottoms",
+    "price_pkr": 1999,
+    "sale_price_pkr": null,
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "charcoal",
+      "mocha",
+      "sand"
+    ],
+    "stock": 25,
+    "images": [],
+    "is_active": true,
+    "is_demo": true,
+    "is_new": false,
+    "is_bestseller": false
+  },
+  {
+    "legacy_id": "z039",
+    "slug": "najma-open-abaya",
+    "name": "Najma Open Abaya",
+    "description": "A modest, elegant abaya with a graceful drop and a clean front line.",
+    "category_slug": "abayas",
+    "price_pkr": 4499,
+    "sale_price_pkr": null,
+    "sizes": [
+      "52",
+      "54",
+      "56",
+      "58"
+    ],
+    "colors": [
+      "charcoal",
+      "emerald",
+      "wine"
+    ],
+    "stock": 25,
+    "images": [],
+    "is_active": true,
+    "is_demo": true,
+    "is_new": true,
+    "is_bestseller": false
+  },
+  {
+    "legacy_id": "z040",
+    "slug": "layla-classic-abaya",
+    "name": "Layla Classic Abaya",
+    "description": "A modest, elegant abaya with a graceful drop and a clean front line.",
+    "category_slug": "abayas",
+    "price_pkr": 5000,
+    "sale_price_pkr": 3999,
+    "sizes": [
+      "52",
+      "54",
+      "56",
+      "58"
+    ],
+    "colors": [
+      "rose",
+      "blush",
+      "sky"
+    ],
+    "stock": 25,
+    "images": [],
+    "is_active": true,
+    "is_demo": true,
+    "is_new": false,
+    "is_bestseller": true
+  },
+  {
+    "legacy_id": "z041",
+    "slug": "safa-embroidered-abaya",
+    "name": "Safa Embroidered Abaya",
+    "description": "A modest, elegant abaya with a graceful drop and a clean front line.",
+    "category_slug": "abayas",
+    "price_pkr": 5999,
+    "sale_price_pkr": null,
+    "sizes": [
+      "52",
+      "54",
+      "56",
+      "58"
+    ],
+    "colors": [
+      "blush",
+      "sage",
+      "rose"
+    ],
+    "stock": 25,
+    "images": [],
+    "is_active": true,
+    "is_demo": true,
+    "is_new": false,
+    "is_bestseller": false
+  },
+  {
+    "legacy_id": "z042",
+    "slug": "durra-butterfly-abaya",
+    "name": "Durra Butterfly Abaya",
+    "description": "A modest, elegant abaya with a graceful drop and a clean front line.",
+    "category_slug": "abayas",
+    "price_pkr": 6200,
+    "sale_price_pkr": 4999,
+    "sizes": [
+      "52",
+      "54",
+      "56",
+      "58"
+    ],
+    "colors": [
+      "blush",
+      "ivory",
+      "rose"
+    ],
+    "stock": 25,
+    "images": [],
+    "is_active": true,
+    "is_demo": true,
+    "is_new": true,
+    "is_bestseller": false
+  },
+  {
+    "legacy_id": "z043",
+    "slug": "yusra-belted-abaya",
+    "name": "Yusra Belted Abaya",
+    "description": "A modest, elegant abaya with a graceful drop and a clean front line.",
+    "category_slug": "abayas",
+    "price_pkr": 5499,
+    "sale_price_pkr": null,
+    "sizes": [
+      "52",
+      "54",
+      "56",
+      "58"
+    ],
+    "colors": [
+      "sky",
+      "sage",
+      "charcoal"
+    ],
+    "stock": 25,
+    "images": [],
+    "is_active": true,
+    "is_demo": true,
+    "is_new": false,
+    "is_bestseller": false
+  },
+  {
+    "legacy_id": "z044",
+    "slug": "marwa-front-open-abaya",
+    "name": "Marwa Front-Open Abaya",
+    "description": "A modest, elegant abaya with a graceful drop and a clean front line.",
+    "category_slug": "abayas",
+    "price_pkr": 3999,
+    "sale_price_pkr": null,
+    "sizes": [
+      "52",
+      "54",
+      "56",
+      "58"
+    ],
+    "colors": [
+      "emerald",
+      "sage",
+      "sky"
+    ],
+    "stock": 25,
+    "images": [],
+    "is_active": true,
+    "is_demo": true,
+    "is_new": false,
+    "is_bestseller": false
+  },
+  {
+    "legacy_id": "z045",
+    "slug": "hajra-kimono-abaya",
+    "name": "Hajra Kimono Abaya",
+    "description": "A modest, elegant abaya with a graceful drop and a clean front line.",
+    "category_slug": "abayas",
+    "price_pkr": 4499,
+    "sale_price_pkr": null,
+    "sizes": [
+      "52",
+      "54",
+      "56",
+      "58"
+    ],
+    "colors": [
+      "wine",
+      "emerald",
+      "charcoal"
+    ],
+    "stock": 25,
+    "images": [],
+    "is_active": true,
+    "is_demo": true,
+    "is_new": true,
+    "is_bestseller": false
+  },
+  {
+    "legacy_id": "z046",
+    "slug": "ruqaiya-plain-abaya",
+    "name": "Ruqaiya Plain Abaya",
+    "description": "A modest, elegant abaya with a graceful drop and a clean front line.",
+    "category_slug": "abayas",
+    "price_pkr": 5999,
+    "sale_price_pkr": null,
+    "sizes": [
+      "52",
+      "54",
+      "56",
+      "58"
+    ],
+    "colors": [
+      "wine",
+      "rose",
+      "ivory"
+    ],
+    "stock": 25,
+    "images": [],
+    "is_active": true,
+    "is_demo": true,
+    "is_new": false,
+    "is_bestseller": false
+  },
+  {
+    "legacy_id": "z047",
+    "slug": "classic-kurta-in-solid-colour",
+    "name": "Classic Kurta in Solid Colour",
+    "description": "A simple, roomy cut that works for women and men alike.",
+    "category_slug": "unisex",
+    "price_pkr": 3499,
+    "sale_price_pkr": null,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "rose",
+      "sand",
+      "charcoal"
+    ],
+    "stock": 25,
+    "images": [],
+    "is_active": true,
+    "is_demo": true,
+    "is_new": true,
+    "is_bestseller": false
+  },
+  {
+    "legacy_id": "z048",
+    "slug": "mandarin-collar-kurta",
+    "name": "Mandarin Collar Kurta",
+    "description": "A simple, roomy cut that works for women and men alike.",
+    "category_slug": "unisex",
+    "price_pkr": 2999,
+    "sale_price_pkr": null,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "charcoal",
+      "wine",
+      "sand"
+    ],
+    "stock": 25,
+    "images": [],
+    "is_active": true,
+    "is_demo": true,
+    "is_new": false,
+    "is_bestseller": true
+  },
+  {
+    "legacy_id": "z049",
+    "slug": "everyday-cotton-kameez",
+    "name": "Everyday Cotton Kameez",
+    "description": "A simple, roomy cut that works for women and men alike.",
+    "category_slug": "unisex",
+    "price_pkr": 4499,
+    "sale_price_pkr": null,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "wine",
+      "emerald",
+      "blush"
+    ],
+    "stock": 25,
+    "images": [],
+    "is_active": true,
+    "is_demo": true,
+    "is_new": false,
+    "is_bestseller": false
+  },
+  {
+    "legacy_id": "z050",
+    "slug": "relaxed-linen-shirt",
+    "name": "Relaxed Linen Shirt",
+    "description": "A simple, roomy cut that works for women and men alike.",
+    "category_slug": "unisex",
+    "price_pkr": 3499,
+    "sale_price_pkr": null,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "rose",
+      "sage",
+      "sand"
+    ],
+    "stock": 25,
+    "images": [],
+    "is_active": true,
+    "is_demo": true,
+    "is_new": true,
+    "is_bestseller": false
+  },
+  {
+    "legacy_id": "z051",
+    "slug": "short-kurta-with-placket",
+    "name": "Short Kurta with Placket",
+    "description": "A simple, roomy cut that works for women and men alike.",
+    "category_slug": "unisex",
+    "price_pkr": 2999,
+    "sale_price_pkr": null,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "emerald",
+      "sand",
+      "wine"
+    ],
+    "stock": 25,
+    "images": [],
+    "is_active": true,
+    "is_demo": true,
+    "is_new": false,
+    "is_bestseller": false
+  },
+  {
+    "legacy_id": "z052",
+    "slug": "festive-kurta",
+    "name": "Festive Kurta",
+    "description": "A simple, roomy cut that works for women and men alike.",
+    "category_slug": "unisex",
+    "price_pkr": 3999,
+    "sale_price_pkr": null,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "ivory",
+      "rose",
+      "sage"
+    ],
+    "stock": 25,
+    "images": [],
+    "is_active": true,
+    "is_demo": true,
+    "is_new": false,
+    "is_bestseller": false
+  },
+  {
+    "legacy_id": "z053",
+    "slug": "layered-winter-kurta",
+    "name": "Layered Winter Kurta",
+    "description": "A simple, roomy cut that works for women and men alike.",
+    "category_slug": "unisex",
+    "price_pkr": 3999,
+    "sale_price_pkr": null,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "emerald",
+      "mocha",
+      "rose"
+    ],
+    "stock": 25,
+    "images": [],
+    "is_active": true,
+    "is_demo": true,
+    "is_new": true,
+    "is_bestseller": false
+  },
+  {
+    "legacy_id": "z054",
+    "slug": "simple-kameez-shalwar-set",
+    "name": "Simple Kameez Shalwar Set",
+    "description": "A simple, roomy cut that works for women and men alike.",
+    "category_slug": "unisex",
+    "price_pkr": 2499,
+    "sale_price_pkr": null,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "wine",
+      "mocha",
+      "charcoal"
+    ],
+    "stock": 25,
+    "images": [],
+    "is_active": true,
+    "is_demo": true,
+    "is_new": false,
+    "is_bestseller": false
+  }
+]
