@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /order-confirmation.html
+Sitemap: https://zirwa.pk/sitemap.xml

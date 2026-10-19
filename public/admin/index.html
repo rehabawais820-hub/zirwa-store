@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Zirwa Admin</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <main id="login" hidden>
+    <form id="loginForm" class="card narrow" autocomplete="on">
+      <h1>Zirwa Admin</h1>
+      <p class="muted">Owner login only.</p>
+      <label>Email <input type="email" name="email" autocomplete="username" required></label>
+      <label>Password <input type="password" name="password" autocomplete="current-password" required></label>
+      <p id="loginError" class="error" role="alert"></p>
+      <button class="btn primary" type="submit">Log in</button>
+    </form>
+  </main>
+
+  <div id="app" hidden>
+    <header class="topbar">
+      <strong>Zirwa Admin</strong>
+      <nav>
+        <button class="tab active" data-tab="products">Products</button>
+        <button class="tab" data-tab="orders">Orders</button>
+      </nav>
+      <button id="logout" class="btn small">Log out</button>
+    </header>
+
+    <section id="tab-products" class="panel">
+      <div class="toolbar">
+        <input id="search" type="search" placeholder="Search products…">
+        <button id="addProduct" class="btn primary">+ Add product</button>
+      </div>
+      <p id="productsMsg" class="muted"></p>
+      <div id="productList" class="list"></div>
+    </section>
+
+    <section id="tab-orders" class="panel" hidden>
+      <div class="toolbar">
+        <select id="orderFilter">
+          <option value="">All orders</option><option value="new">New</option><option value="confirmed">Confirmed</option>
+          <option value="shipped">Shipped</option><option value="delivered">Delivered</option><option value="cancelled">Cancelled</option>
+        </select>
+        <button id="retryAll" class="btn">Retry failed email notifications</button>
+      </div>
+      <p id="ordersMsg" class="muted"></p>
+      <div id="orderList" class="list"></div>
+    </section>
+  </div>
+
+  <dialog id="productDialog">
+    <form id="productForm" method="dialog">
+      <h2 id="dialogTitle">Product</h2>
+      <label>Name <input name="name" required minlength="2" maxlength="140"></label>
+      <label>URL name (slug) <input name="slug" required pattern="[a-z0-9]+(-[a-z0-9]+)*" title="lowercase letters, numbers and dashes"></label>
+      <label>Description <textarea name="description" rows="4" maxlength="4000"></textarea></label>
+      <div class="row">
+        <label>Regular price (PKR) <input name="price_pkr" type="number" min="0" max="10000000" step="1" required inputmode="numeric"></label>
+        <label>Discount % <input name="discount_percent" type="number" min="0" max="90" step="1" inputmode="numeric" placeholder="0"></label>
+        <label>Sale price (PKR) <input name="sale_price_pkr" type="number" min="0" step="1" inputmode="numeric" placeholder="none"></label>
+      </div>
+      <p class="muted small">To discount an item, type a discount % (the sale price is worked out) or type the exact sale price. Leave both empty for no discount. Customers pay the sale price.</p>
+      <div class="row">
+        <label>Stock <input name="stock" type="number" min="0" step="1" value="0" required inputmode="numeric"></label>
+        <label>Category <select name="category_slug" id="categorySelect"></select></label>
+      </div>
+      <label>Sizes (comma separated) <input name="sizes" placeholder="XS, S, M, L, XL"></label>
+      <fieldset>
+        <legend>Colours</legend>
+        <div id="colorPicker" class="colors"></div>
+      </fieldset>
+      <label class="check"><input type="checkbox" name="is_new"> Show in "New arrivals"</label>
+      <label class="check"><input type="checkbox" name="is_bestseller"> Show in "Best sellers" on the home page</label>
+      <label class="check"><input type="checkbox" name="is_active" checked> Visible on the store (untick to deactivate)</label>
+
+      <fieldset>
+        <legend>Images (JPG, PNG or WebP, max 5 MB each)</legend>
+        <div id="imageList" class="images"></div>
+        <input id="imageInput" type="file" accept="image/jpeg,image/png,image/webp" multiple>
+      </fieldset>
+
+      <p id="formError" class="error" role="alert"></p>
+      <div class="row end">
+        <button type="button" id="cancelProduct" class="btn">Cancel</button>
+        <button type="submit" id="saveProduct" class="btn primary">Save</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+  <script src="../js/config.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

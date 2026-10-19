@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shop Women's Clothing | Zirwa Clothing Store</title>
+<meta name="description" content="Browse dresses, co-ords, tops, bottoms, abayas and unisex pieces. Filter by size, colour and price. Cash on delivery across Pakistan.">
+<link rel="canonical" href="https://zirwa.pk/shop.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Shop Women's Clothing | Zirwa Clothing Store">
+<meta property="og:description" content="Browse dresses, co-ords, tops, bottoms, abayas and unisex pieces. Filter by size, colour and price. Cash on delivery across Pakistan.">
+<meta property="og:site_name" content="Zirwa Clothing Store">
+<meta name="theme-color" content="#f7e3e3">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="shop">
+<main id="main">
+
+<div class="page-head"><div class="wrap"><div class="crumbs"><a href="index.html">Home</a> / Shop</div><h1 id="shop-title">All products</h1></div></div>
+<section class="section" style="padding-top:40px"><div class="wrap shop">
+  <aside class="filters" id="filters" aria-label="Filters"></aside>
+  <div>
+    <div class="shop-top"><div><button class="btn btn-light btn-sm filter-toggle" id="filter-toggle" aria-expanded="false" aria-controls="filters">Filters</button> <span id="count" aria-live="polite"></span></div>
+      <label>Sort by <select id="sort"><option value="featured">Featured</option><option value="new">New arrivals</option><option value="low">Price, low to high</option><option value="high">Price, high to low</option></select></label></div>
+    <div class="grid" id="shop-grid" style="grid-template-columns:repeat(auto-fill,minmax(210px,1fr))"></div>
+    <div class="empty" id="none" hidden><h2 style="font-size:32px;margin-bottom:8px">No products match</h2><p>Try removing a filter or searching for something else.</p></div>
+  </div>
+</div></section>
+</main>
+<script src="js/config.js"></script>
+<script src="js/zirwa-api.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
