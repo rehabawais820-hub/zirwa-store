@@ -6,7 +6,7 @@
   'use strict';
   const cfg = window.ZIRWA_CONFIG || {};
   const $ = (s, r = document) => r.querySelector(s);
-  const BUCKET = 'product-images';
+  const BUCKET = 'bucket_name';
   const MAX_BYTES = 5 * 1024 * 1024;
   const TYPES = { 'image/jpeg': 'jpg', 'image/png': 'png', 'image/webp': 'webp' };
 
