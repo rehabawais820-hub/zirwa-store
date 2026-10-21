@@ -71,9 +71,9 @@
     return { sub: sub, ship: ship, total: sub + ship };
   }
 
-  function signature(items, customer) {
+  function signature(items, customer, paymentMethod) {
     return JSON.stringify([items.map(function (i) { return [i.product_id, i.quantity, i.size, i.color]; }).sort(),
-      customer.name, customer.phone, customer.address, customer.city, customer.notes]);
+      customer.name, customer.phone, customer.address, customer.city, customer.notes, paymentMethod]);
   }
 
   var api = {
@@ -93,15 +93,16 @@
     /** cart: [{id, qty, size, color}]  customer: {name, phone, address, city, notes}
      *  One checkout attempt = one order: the same key is reused for retries/double-clicks of the SAME
      *  cart + details, and a new key is made when either changes. Rejects with {status, message, fields}. */
-    placeOrder: function (cart, customer, honeypot) {
+    placeOrder: function (cart, customer, honeypot, paymentMethod) {
+      paymentMethod = paymentMethod === 'BANK_TRANSFER' ? 'BANK_TRANSFER' : 'COD';
       if (inFlight) return Promise.reject({ message: 'Your order is already being placed. Please wait.' });
       var items = cart.map(function (l) { return { product_id: l.id, quantity: Number(l.qty), size: l.size || '', color: l.color || '' }; });
       var cust = { name: customer.name, phone: customer.phone, address: customer.address, city: customer.city, notes: customer.notes || '' };
-      var sig = signature(items, cust), saved = null;
+      var sig = signature(items, cust, paymentMethod), saved = null;
       try { saved = JSON.parse(ss('get', KEY_STORE)); } catch (e) { saved = null; }
       if (!saved || saved.sig !== sig) { saved = { key: uuid(), sig: sig }; ss('set', KEY_STORE, JSON.stringify(saved)); }
       inFlight = true;
-      var body = { idempotency_key: saved.key, website: honeypot || '', customer: cust, items: items };
+      var body = { idempotency_key: saved.key, website: honeypot || '', customer: cust, items: items, payment_method: paymentMethod };
       return fetch('/api/create-order', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body) })
         .then(function (r) {
           return r.json().catch(function () { return {}; }).then(function (j) {
@@ -121,7 +122,9 @@
         var v = [i.size ? 'Size ' + i.size : '', i.color ? (colorName ? colorName(i.color) : i.color) : ''].filter(Boolean).join(', ');
         return (n + 1) + '. ' + i.name + (v ? ' (' + v + ')' : '') + ' x' + i.quantity + ' = PKR ' + Number(i.line_total_pkr).toLocaleString('en-PK');
       }));
-      lines.push('', 'Total: PKR ' + Number(order.total_pkr).toLocaleString('en-PK') + ' (Cash on Delivery)');
+      var method = order.payment_method === 'BANK_TRANSFER' ? 'Bank Transfer (awaiting payment verification)' : 'Cash on Delivery';
+      lines.push('', 'Total: PKR ' + Number(order.total_pkr).toLocaleString('en-PK'), 'Payment method: ' + method);
+      if (order.payment_method === 'BANK_TRANSFER') lines.push('Please share the bank account details for this order.');
       return lines.join('\n');
     }
   };
