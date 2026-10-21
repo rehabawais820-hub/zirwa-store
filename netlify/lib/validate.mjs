@@ -30,6 +30,8 @@ export function validateOrder(body) {
   const city = clean(c.city);
   const notes = clean(c.notes);
   const phone = normalizePkPhone(c.phone);
+  const paymentMethod = String(body.payment_method || 'COD').toUpperCase();
+  if (!['COD', 'BANK_TRANSFER'].includes(paymentMethod)) errors.payment_method = 'Please select Cash on Delivery or Bank Transfer.';
 
   if (name.length < 2 || name.length > 80) errors.name = 'Please enter your full name (2-80 characters).';
   if (!phone) errors.phone = 'Please enter a valid Pakistani mobile number, e.g. 0300 1234567.';
@@ -55,5 +57,5 @@ export function validateOrder(body) {
   }
 
   if (Object.keys(errors).length) return { ok: false, errors };
-  return { ok: true, value: { idempotency_key: key.toLowerCase(), name, phone, address, city, notes, items } };
+  return { ok: true, value: { idempotency_key: key.toLowerCase(), name, phone, address, city, notes, items, payment_method: paymentMethod } };
 }
