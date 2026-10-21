@@ -134,7 +134,7 @@
     if (found) found.qty = Math.min(max, found.qty + qty); else cart.push({ id: id, size: size, color: color, qty: Math.min(max, qty) });
     saveCart();
   }
-  function totals() { return window.ZirwaAPI.totals(cart, PRODUCTS, SETTINGS); }
+  function totals(items) { return window.ZirwaAPI.totals(items || cart, PRODUCTS, SETTINGS); }
   var toastT;
   function toast(msg) {
     var t = $('#toast'); t.textContent = msg; t.classList.add('show');
@@ -333,8 +333,8 @@
       (p.sizes.length ? '<div class="opt" id="size-opt"><div class="opt-label">Size <span><a href="#tab-size" class="link-u" id="size-link">Size guide</a></span></div><div class="chips" id="sizes"></div></div>' : '') +
       (out ? '' : '<div class="opt"><div class="opt-label">Quantity</div><div class="qty"><button type="button" id="q-" aria-label="Decrease">&minus;</button><output id="q">1</output><button type="button" id="q+" aria-label="Increase">+</button></div></div>') +
       '<div class="pd-actions">' + (out ? '<button class="btn btn-dark btn-block" disabled>Sold out</button>' :
-        '<button class="btn btn-dark btn-block" id="add">Add to Cart</button><button class="btn btn-wa btn-block" id="wa">Order on WhatsApp</button>') + '</div>' +
-      '<div class="pd-note"><span>Free shipping on orders above PKR 4,000</span><span>Cash on delivery available</span><span>Questions? Call or WhatsApp ' + STORE.phone + '</span></div></div>';
+        '<button class="btn btn-dark btn-block" id="add">Add to Cart</button><button class="btn btn-light btn-block" id="buy-now">Buy It Now</button><button class="btn btn-wa btn-block" id="wa">Order on WhatsApp</button>') + '</div>' +
+      '<div class="pd-note"><span>Free shipping on orders above PKR 4,000</span><span>Cash on delivery and bank transfer</span><span>Questions? Call or WhatsApp ' + STORE.phone + '</span></div></div>';
     function drawGallery() {
       if (hasPhoto(p)) {
         $('#main-art').innerHTML = photo(p, img);
@@ -364,6 +364,12 @@
       $('#q-').onclick = function () { qty = Math.max(1, qty - 1); $('#q').textContent = qty; };
       $('#q\\+').onclick = function () { qty = Math.min(maxQty, qty + 1); $('#q').textContent = qty; };
       $('#add').onclick = function () { if (need()) return; addToCart(p.id, size || '', color, qty); toast('Added to cart'); };
+      $('#buy-now').onclick = function () {
+        if (need()) return;
+        try { sessionStorage.setItem('zirwa_buy_now_item', JSON.stringify({ id: p.id, size: size || '', color: color || '', qty: qty })); }
+        catch (e) { toast('Please enable session storage or use Add to Cart.'); return; }
+        location.href = 'cart.html?buyNow=1';
+      };
       $('#wa').onclick = function () {
         if (need()) return;
         var url = location.href.split('#')[0];
@@ -378,12 +384,25 @@
     if (sl) sl.addEventListener('click', function (e) { e.preventDefault(); openTab('size'); $('#tab-size').scrollIntoView({ behavior: 'smooth', block: 'center' }); });
     $('#desc-text').textContent = p.desc + ' Fabric and care details are confirmed on WhatsApp before dispatch.';
     $('#review-wa').href = waLink('Assalam o Alaikum! I would like to share a review for ' + p.name + '.');
-    var rel = PRODUCTS.filter(function (x) { return x.cat === p.cat && x.id !== p.id; }).slice(0, 4);
+    var rel = PRODUCTS.filter(function (x) { return x.cat === p.cat && x.id !== p.id; });
+    if (rel.length < 4) {
+      var extra = PRODUCTS.filter(function (x) { return x.cat !== p.cat && x.id !== p.id && !rel.some(function (r) { return r.id === x.id; }); });
+      rel = rel.concat(extra);
+    }
+    rel = rel.slice(0, 4);
     var g = $('#related'); g.innerHTML = rel.map(card).join(''); bindCards(g);
+    if (!rel.length) g.innerHTML = '<p class="sub">More styles coming soon.</p>';
   }
 
   function initCart() {
     var box = $('#cart-box');
+    var buyNowMode = new URLSearchParams(location.search).get('buyNow') === '1';
+    var buyNowCart = null;
+    if (buyNowMode) {
+      buyNowCart = [];
+      try { var bi = JSON.parse(sessionStorage.getItem('zirwa_buy_now_item') || 'null'); if (bi && byId(bi.id)) buyNowCart = [{ id: bi.id, size: bi.size || '', color: bi.color || '', qty: Math.max(1, Math.min(10, byId(bi.id).stock || 1, Number(bi.qty) || 1)) }]; } catch (e) {}
+    }
+    function activeCart() { return buyNowMode ? buyNowCart : cart; }
     function lineHTML(l, i) {
       var p = byId(l.id); if (!p) return '';
       var shown = hasPhoto(p) ? photo(p, 0) : art(p.type, hexOf(l.color), p.seed);
@@ -394,13 +413,15 @@
     }
     function noticeHTML() { return cartNotices.length ? '<p class="notice" role="status">' + cartNotices.map(esc).join(' ') + '</p>' : ''; }
     function render() {
-      if (!cart.length) { box.innerHTML = noticeHTML() + '<div class="empty"><h2 style="font-size:36px;margin-bottom:10px">Your cart is empty</h2><p style="margin-bottom:22px">Browse our latest outfits and add your favourites.</p><a class="btn btn-dark" href="shop.html">Continue shopping</a></div>'; return; }
-      var t = totals(), u = load('zirwa_user', {});
-      box.innerHTML = noticeHTML() + '<div class="cart"><div>' + cart.map(lineHTML).join('') + '<p style="margin-top:18px"><a class="link-u" href="shop.html">Continue shopping</a></p></div>' +
+      var items = activeCart();
+      if (!items.length) { box.innerHTML = noticeHTML() + '<div class="empty"><h2 style="font-size:36px;margin-bottom:10px">Your cart is empty</h2><p style="margin-bottom:22px">Browse our latest outfits and add your favourites.</p><a class="btn btn-dark" href="shop.html">Continue shopping</a></div>'; return; }
+      var t = totals(items), u = load('zirwa_user', {});
+      box.innerHTML = noticeHTML() + '<div class="cart"><div>' + items.map(lineHTML).join('') + '<p style="margin-top:18px"><a class="link-u" href="shop.html">Continue shopping</a></p></div>' +
         '<div class="panel"><h2>Checkout</h2>' +
         '<div class="sum-row"><span>Subtotal</span><span>' + money(t.sub) + '</span></div><div class="sum-row"><span>Shipping</span><span>' + (t.ship ? money(t.ship) : 'Free') + '</span></div>' +
         (t.ship ? '<p class="sub" style="font-size:14px">Add ' + money(SETTINGS.freeShipFrom - t.sub) + ' more for free shipping.</p>' : '') +
         '<div class="sum-row sum-total"><span>Total</span><span>' + money(t.total) + '</span></div>' +
+        (buyNowMode ? '<p class="sub" style="margin-top:10px">Buy It Now checkout — your saved cart will remain unchanged.</p>' : '') +
         '<form id="co" style="margin-top:22px" novalidate>' +
         '<div class="field"><label for="c-name">Full name</label><input id="c-name" autocomplete="name" maxlength="80" value="' + esc(u.name || '') + '" required></div>' +
         '<div class="field"><label for="c-phone">Phone number</label><input id="c-phone" type="tel" autocomplete="tel" placeholder="03XX XXXXXXX" value="' + esc(u.phone || '') + '" required></div>' +
@@ -409,25 +430,30 @@
         '<div class="field"><label for="c-note">Order notes (optional)</label><input id="c-note" maxlength="300"></div>' +
         '<div class="hp" aria-hidden="true"><label>Leave this empty<input id="c-web" tabindex="-1" autocomplete="off"></label></div>' +
         '<fieldset class="pay" style="border:0"><legend style="font-weight:500;margin-bottom:8px">Payment method</legend>' +
-        '<label><input type="radio" name="pay" value="Cash on Delivery" checked><span>Cash on Delivery<small>Pay when your order arrives.</small></span></label>' +
-        ['JazzCash', 'Easypaisa', 'Bank transfer'].map(function (n) { return '<label class="off"><input type="radio" name="pay" value="' + n + '" disabled><span>' + n + '<small>Not available yet.</small></span></label>'; }).join('') + '</fieldset>' +
+        '<label><input type="radio" name="pay" value="COD" checked><span>Cash on Delivery<small>Pay when your order arrives.</small></span></label>' +
+        '<label><input type="radio" name="pay" value="BANK_TRANSFER"><span>Bank Transfer<small>Place the order, then WhatsApp us for bank details. Your order stays unpaid until we verify the transfer.</small></span></label>' +
+        '<label class="off"><input type="radio" name="pay" value="ONLINE" disabled><span>Online payment<small>Coming soon — card/gateway setup is required.</small></span></label></fieldset>' +
         '<p class="err" id="co-err" role="alert"></p><button class="btn btn-dark btn-block" id="co-submit" type="submit">Place order</button>' +
-        '<p class="sub" style="font-size:13.5px;margin-top:10px">Your order is saved with us and we confirm it with you by phone or WhatsApp before dispatch.</p></form></div></div>';
-      $$('[data-d]', box).forEach(function (b) { b.onclick = function () { var l = cart[+b.dataset.i], p = byId(l.id); l.qty = Math.max(1, Math.min(10, p ? p.stock : 10, l.qty + +b.dataset.d)); saveCart(); render(); }; });
-      $$('[data-rm]', box).forEach(function (b) { b.onclick = function () { cart.splice(+b.dataset.rm, 1); saveCart(); render(); }; });
+        '<a class="btn btn-wa btn-block" style="margin-top:10px" href="' + waLink('Assalam o Alaikum! I have a question about ordering from Zirwa Clothing Store.') + '" target="_blank" rel="noopener">Questions? WhatsApp us</a>' +
+        '<p class="sub" style="font-size:13.5px;margin-top:10px">Your order is saved and we will contact you by phone/WhatsApp. Order email alerts require the store email settings to be configured.</p></form></div></div>';
+      $$('[data-d]', box).forEach(function (b) { b.onclick = function () { var items = activeCart(), l = items[+b.dataset.i], p = byId(l.id); l.qty = Math.max(1, Math.min(10, p ? p.stock : 10, l.qty + +b.dataset.d)); if (!buyNowMode) saveCart(); render(); }; });
+      $$('[data-rm]', box).forEach(function (b) { b.onclick = function () { activeCart().splice(+b.dataset.rm, 1); if (buyNowMode) { try { sessionStorage.removeItem('zirwa_buy_now_item'); } catch (e) {} } else saveCart(); render(); }; });
       $('#co').addEventListener('submit', place);
     }
     function place(e) {
       e.preventDefault();
       var name = $('#c-name').value.trim(), phone = $('#c-phone').value.trim(), city = $('#c-city').value.trim(), addr = $('#c-addr').value.trim(), err = $('#co-err'), btn = $('#co-submit');
+      var items = activeCart();
+      if (!items.length) { err.textContent = 'Your cart is empty. Please choose a product first.'; return; }
       if (!name || !city || !addr) { err.textContent = 'Please fill in your name, city and delivery address.'; return; }
       if (addr.length < 10) { err.textContent = 'Please enter your complete delivery address (house, street, area).'; $('#c-addr').focus(); return; }
       if (!/^(?:\+?92|0)?3\d{9}$/.test(phone.replace(/[\s\-()]/g, ''))) { err.textContent = 'Enter a valid mobile number, for example 0331 7756688.'; $('#c-phone').focus(); return; }
       err.textContent = ''; btn.disabled = true; btn.textContent = 'Placing your order…';
       var cust = { name: name, phone: phone, city: city, address: addr, notes: $('#c-note').value.trim() };
-      window.ZirwaAPI.placeOrder(cart, cust, $('#c-web').value).then(function () {
+      var paymentMethod = (box.querySelector('input[name="pay"]:checked') || {}).value || 'COD';
+      window.ZirwaAPI.placeOrder(items, cust, $('#c-web').value, paymentMethod).then(function () {
         save('zirwa_user', { name: name, phone: phone, city: city });
-        cart = []; saveCart();
+        if (!buyNowMode) { cart = []; saveCart(); } else { try { sessionStorage.removeItem('zirwa_buy_now_item'); } catch (e) {} }
         location.href = 'order-confirmation.html';
       }).catch(function (ex) {
         var f = ex && ex.fields ? Object.keys(ex.fields).map(function (k) { return ex.fields[k]; }).join(' ') : '';
@@ -456,7 +482,7 @@
       (Number(o.discount_pkr) ? '<div class="sum-row"><span>Discount</span><span>-' + money(o.discount_pkr) + '</span></div>' : '') +
       '<div class="sum-row"><span>Shipping</span><span>' + (Number(o.shipping_pkr) ? money(o.shipping_pkr) : 'Free') + '</span></div>' +
       '<div class="sum-row sum-total"><span>Total</span><span>' + money(o.total_pkr) + '</span></div></div>' +
-      '<p>Payment: <b>Cash on Delivery</b>. Please pay when your order arrives.</p>' +
+      '<p>Payment: <b>' + (o.payment_method === 'BANK_TRANSFER' ? 'Bank Transfer' : 'Cash on Delivery') + '</b>. ' + (o.payment_method === 'BANK_TRANSFER' ? 'Your order is recorded as unpaid until we verify the transfer. Tap WhatsApp below to request current bank details.' : 'Please pay when your order arrives.') + '</p>' +
       '<p>We will confirm your order with you by phone or WhatsApp before dispatch. Keep your order number for any question.</p>' +
       '<a class="btn btn-wa" href="' + waLink(window.ZirwaAPI.orderMessage(o, colorName)) + '" target="_blank" rel="noopener">Send order on WhatsApp</a>' +
       '<p style="margin-top:20px"><a class="link-u" href="shop.html">Continue shopping</a></p></div>';
