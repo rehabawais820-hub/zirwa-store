@@ -13,6 +13,7 @@ export function buildEmail(order) {
   const lines = (order.items || []).map((i) =>
     `${i.name}${i.size ? ` / ${i.size}` : ''}${i.color ? ` / ${colorName(i.color)}` : ''} x ${i.quantity} — ${pkr(i.line_total_pkr)}`);
 
+  const paymentLabel = order.payment_method === 'BANK_TRANSFER' ? 'Bank Transfer (awaiting verification)' : 'Cash on Delivery';
   const text = [
     `New order ${order.order_number}`, '',
     ...lines, '',
@@ -20,7 +21,8 @@ export function buildEmail(order) {
     `Discount: -${pkr(order.discount_pkr)}`,
     `Shipping: ${pkr(order.shipping_pkr)}`,
     `Total: ${pkr(order.total_pkr)}`,
-    `Payment: ${order.payment_method} (${order.payment_status})`, '',
+    `Payment: ${paymentLabel} (${order.payment_status})`,
+    ...(order.payment_method === 'BANK_TRANSFER' ? ['Please verify bank transfer manually before marking this order paid.'] : []), '',
     `Open in admin dashboard (login required): ${link}`,
   ].join('\n');
 
@@ -28,10 +30,10 @@ export function buildEmail(order) {
 <h2>New order ${esc(order.order_number)}</h2>
 <ul>${lines.map((l) => `<li>${esc(l)}</li>`).join('')}</ul>
 <p>Subtotal: ${esc(pkr(order.subtotal_pkr))}<br>Discount: -${esc(pkr(order.discount_pkr))}<br>Shipping: ${esc(pkr(order.shipping_pkr))}<br>
-<strong>Total: ${esc(pkr(order.total_pkr))}</strong><br>Payment: ${esc(order.payment_method)} (${esc(order.payment_status)})</p>
+<strong>Total: ${esc(pkr(order.total_pkr))}</strong><br>Payment: ${esc(paymentLabel)} (${esc(order.payment_status)})</p>
 <p><a href="${esc(link)}">Open in admin dashboard</a> (login required)</p></div>`;
 
-  return { subject: `New order ${order.order_number} — ${pkr(order.total_pkr)} (COD)`, text, html };
+  return { subject: `New order ${order.order_number} — ${pkr(order.total_pkr)} (${paymentLabel})`, text, html };
 }
 
 async function sendViaResend(order) {
