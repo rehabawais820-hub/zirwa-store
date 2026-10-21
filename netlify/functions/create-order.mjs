@@ -11,6 +11,7 @@ const ERRORS = {
   invalid_variant:     [422, 'The chosen size or colour is not available for one of the items.'],
   invalid_items:       [422, 'Your cart contains an invalid item.'],
   invalid_customer:    [422, 'Please check your name, phone number and address.'],
+  invalid_payment_method: [422, 'Please select a supported payment method.'],
 };
 
 export default async (req, context) => {
@@ -36,7 +37,7 @@ export default async (req, context) => {
     // Only ids / quantities / variants are sent. Prices are looked up inside the database.
     order = await rpc('place_order', {
       p_idempotency_key: o.idempotency_key, p_customer_name: o.name, p_phone: o.phone, p_address: o.address,
-      p_city: o.city, p_notes: o.notes, p_items: o.items, p_client_hash: clientHash(ip),
+      p_city: o.city, p_notes: o.notes, p_items: o.items, p_client_hash: clientHash(ip), p_payment_method: o.payment_method,
     });
   } catch (err) {
     const known = ERRORS[String(err.message || '').trim()];
