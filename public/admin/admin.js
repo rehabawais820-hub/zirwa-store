@@ -210,7 +210,6 @@
   async function loadOrders() {
     $('#ordersMsg').textContent = 'Loading…';
     let q = sb.from('orders').select('*, order_items(*)').order('created_at', { ascending: false }).limit(100);
-    deploy test
     const st = $('#orderFilter').value; if (st) q = q.eq('order_status', st);
     const { data, error } = await q;
     if (error) { $('#ordersMsg').textContent = 'Could not load orders: ' + error.message; return; }
